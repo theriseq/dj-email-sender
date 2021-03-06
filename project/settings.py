@@ -26,6 +26,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'basic_views',
+    'sender',
+    'recipients',
 ]
 
 MIDDLEWARE = [
@@ -112,3 +114,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = '0e1829360f8d4c'
+EMAIL_HOST_PASSWORD = '52882878da09e7'
+EMAIL_PORT = '2525'
+

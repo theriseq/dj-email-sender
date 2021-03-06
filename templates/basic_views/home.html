@@ -4,8 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DJANGO Project</title>
+    <style>
+        form {
+            display: flex;
+            flex-flow: column;
+        }
+        form input, form textarea {
+            margin-bottom: 12px;
+
+        }
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Email Sender</h1>
+    <main>
+        <h1>Email Sender</h1>
+        <form method="POST">
+            <h2>Compose Email</h2>
+            {% csrf_token %}
+            <input type="text" name="recipients-inp" placeholder="Email Addresses" required/>
+            <input type="text" name="subject-inp" placeholder="Email Title" required/>
+            <textarea name="content-inp" placeholder="Content here" required></textarea>
+            <input type="submit" value="Send">
+        </form>
+        {{ to_show }}
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </body>
 </html>
